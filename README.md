@@ -108,6 +108,41 @@ Get-Content C:\Users\your-user-name\.ssh\do-key.pub | Set-Clipboard
 5. Click **Add SSH Key** when completed
 
 ## Creating the cloud-init Configuration File
-Now we will create our cloud-init file. The file which is written in YAML, helps us automatically configure and set up our Droplets. After creating our cloud-init file, we are able to upload the same file to every single Droplet, allowing a consistent environment and reduced setup time.
+Now we will create our cloud-init file. The file, which a YAML file, helps us automatically configure and set up our Droplets. After creating our cloud-init file, we are able to upload the same file to every single Droplet, allowing a consistent environment and reduced setup time.
+
+For our cloud-init file, the file will:
+1. create a new regular user
+2. install some initial packages
+3. add our public key to the authorized_keys file in our new users home directory
+4. disable root access via SSH
+
 
 1. Open Notepad 
+2. Copy and paste the following code below into your Notepad
+<!-- a couple thinies here -->
+
+```
+#cloud-config
+users:
+  - name: user-name #change me
+    primary_group: group-name #change me
+    groups: wheel
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-ed25519 ... #change me
+
+packages:
+  - ripgrep
+  - rsync
+  - neovim
+  - fd
+  - less
+  - man-db
+  - bash-completion
+  - tmux
+
+disable_root: true
+```
+**Note**: Change user-name to a name of your choice. As for primary_group, changing it to "users" is a safe starting choice. Also, change the "ssh-ed25519 ..." to the same SSH key we copied from earlier in Step 1 in [Connecting your Public Key to DigitalOcean](#connecting-your-public-key-to-digitalocean).
+3. 
