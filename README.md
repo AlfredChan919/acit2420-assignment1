@@ -24,6 +24,7 @@ Make sure to select the latest image post. Also, make sure the download contains
 By uploading our own custom image, we can use it to create our Droplets with Arch Linux. This allows us to create a consistent environment by utilizing the custom image alongside our own cloud-init settings. 
 
 1. Click <b>Manage</b> on the left-hand side menu.
+<img src="assets/digitalocean1.png" alt = "Digital Ocean Instruction">
 2. Select <b>Backups & Snapshots</b> from the left menu
 
 
