@@ -94,8 +94,7 @@ Get-Content C:\Users\your-user-name\.ssh\do-key.pub | Set-Clipboard
 **Note**: Make sure to change "your-user-name" to the correct name in the terminal. Also make sure the name of the key ends in ".pub"
 
 2. On DigitalOcean, click **Settings**
-<img src="assets/connectkey1.png" alt = "SSH key instructions">
-![SSH key instructions](assets/sshkey1.png)
+![SSH key instructions](assets/connectkey1.png)
 <br></br>
 
 3. Select the **Security** tab and then click **Add SSH Key**
@@ -146,9 +145,9 @@ packages:
 disable_root: true
 ```
 **Note**: Change user-name to a name of your choice. As for primary_group, changing it to "users" is a safe starting choice. Also, change the "ssh-ed25519 ..." to the same SSH key we copied from earlier in Step 1 in [Connecting your Public Key to DigitalOcean](#connecting-your-public-key-to-digitalocean).
-*sudo - super
-*packages - all packages inside will be downloaded upon initialization*
-
+* *sudo: ['ALL=(ALL) NOPASSWD:ALL'] - this allows all users to use the sudo command without a password. sudo allows an elevated level of power in performing commands in linux.*
+* *packages - all packages inside will be downloaded upon initialization*
+* *disable_root: true - this prevents users from accessing the remote server as a root user through SSH*
 
 3. Save the file as a ".txt" and keep it in a location you can access it easily
 
