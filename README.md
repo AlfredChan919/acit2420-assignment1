@@ -8,12 +8,12 @@ This guide is desgined with the base knowledge of a CIT student entering term 2 
 
 1. [Download Custom Arch Linux Image](#download-custom-arch-linux-image)
 2. [Upload custom image onto DigitalOcean](#upload-custom-image-to-digitalocean)
-3. [Creating and Connecting SSH Key Pair onto DigitalOcean](#creating-the-ssh-key-pair)
+3. [Creating the SSH Key Pair](#creating-the-ssh-key-pair)
 4. [Connecting Your Public Key to DigitalOcean](#connecting-your-public-key-to-digitalocean)
 5. [Creating the cloud-init Configuration File](#creating-the-cloud-init-configuration-file)
-6. Creating up your DigitalOcean Droplet with Arch Linux
+6. [Creating up your DigitalOcean Droplet with Arch Linux](#creating-your-droplet-on-digitalocean)
 7. Implementing the cloud-init Configuration File to Automate Initial Setup Tasks
-8. Lastly, thos guide will show you how to connect to your remote server using the SSH keys.
+8. Lastly, this guide will show you how to connect to your remote server using the SSH keys.
 
 ## Download Custom Arch Linux Image
 Before beginning, first you need to download a custom Arch Linux image from: 
@@ -69,7 +69,7 @@ Double check that the directory was created or exists by typing the command:
 ls
 ```
 *ls - list directory contents*
-<img src="assets/sshkey1.png" alt = "SSH key instructions">
+![SSH key instructions](assets/sshkey1.png)
 <br></br>
 
 1. Type the following command to create a new SSH key pair:
@@ -95,6 +95,7 @@ Get-Content C:\Users\your-user-name\.ssh\do-key.pub | Set-Clipboard
 
 2. On DigitalOcean, click **Settings**
 <img src="assets/connectkey1.png" alt = "SSH key instructions">
+![SSH key instructions](assets/sshkey1.png)
 <br></br>
 
 3. Select the **Security** tab and then click **Add SSH Key**
@@ -145,5 +146,10 @@ packages:
 disable_root: true
 ```
 **Note**: Change user-name to a name of your choice. As for primary_group, changing it to "users" is a safe starting choice. Also, change the "ssh-ed25519 ..." to the same SSH key we copied from earlier in Step 1 in [Connecting your Public Key to DigitalOcean](#connecting-your-public-key-to-digitalocean).
+*sudo - super
+*packages - all packages inside will be downloaded upon initialization*
 
-3. Save the file as a ".txt" and keep it in a location you can access easily 
+
+3. Save the file as a ".txt" and keep it in a location you can access it easily
+
+## Creating your Droplet on DigitalOcean
