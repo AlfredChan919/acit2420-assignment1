@@ -110,4 +110,4 @@ Get-Content C:\Users\your-user-name\.ssh\do-key.pub | Set-Clipboard
 ## Creating the cloud-init Configuration File
 Now we will create our cloud-init file. The file which is written in YAML, helps us automatically configure and set up our Droplets. After creating our cloud-init file, we are able to upload the same file to every single Droplet, allowing a consistent environment and reduced setup time.
 
-1. Open Notepad
+1. Open Notepad 
