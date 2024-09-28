@@ -1,4 +1,4 @@
-# How to Set up Arch Linux on a DigitalOcean Droplet
+# How to Set up Arch Linux on a DigitalOcean Droplet (Level 2)
 
 # Introduction
 DigitalOcean is a cloud computing platform that allows you to create virtual machine instances called Droplets on their servers. This allows you to access your remote server from anywhere as well as relieving your own machine of its resources.
@@ -12,7 +12,7 @@ This guide is desgined with the base knowledge of a CIT student entering term 2 
 4. [Connecting Your Public Key to DigitalOcean](#connecting-your-public-key-to-digitalocean)
 5. [Creating the cloud-init Configuration File](#creating-the-cloud-init-configuration-file)
 6. [Creating up your DigitalOcean Droplet with Arch Linux](#creating-your-droplet-on-digitalocean)
-7. Implementing the cloud-init Configuration File to Automate Initial Setup Tasks
+7. [Implementing the cloud-init Configuration File to Automate Initial Setup Tasks](#implementing-the-cloud-init-configuration-file)
 8. Lastly, this guide will show you how to connect to your remote server using the SSH keys.
 
 ## Download Custom Arch Linux Image
@@ -152,3 +152,33 @@ disable_root: true
 3. Save the file as a ".txt" and keep it in a location you can access it easily
 
 ## Creating your Droplet on DigitalOcean
+
+1. On DigitalOcean, click **Create** and select **Droplets**
+![Creating Droplet Instructions](./assets/droplet1.png)
+
+2. Select the region closest to your current location to ensure low response times
+![Creating Droplet Instructions](./assets/droplet2.png)
+
+3. Select **Custom images** and select our custom Arch Linux image
+![Creating Droplet Instructions](./assets/droplet3.png)
+
+4. Select **Basic** plan, then select **Premium AMD** and then for our use-case we will select **$7/mo** option.  
+![Creating Droplet Instructions](./assets/droplet4.png)
+
+5. Select **SSH Key** as Authentication method and ensure your SSH key is checked off.
+![Creating Droplet Instructions](./assets/droplet5.png)
+
+## Implementing the cloud-init Configuration File
+Using DigitalOcean, they provide a free initialization scripts. This allows us to directly paste our code into that section and have DigitalOcean run the cloud-init YAML code for us.
+
+1. Under the SSH key from Step 5 of [Creating your Droplet on DigitalOcean](#creating-your-droplet-on-digitalocean), Select **Advanced Options** and Check the box for **Add Initialization Scripts (free)**
+![Creating Droplet Instructions](./assets/cloudinit1.png)
+
+2. From your cloud-init file earlier, copy and paste the contents into the textbox on DigitalOcean
+![Creating Droplet Instructions](./assets/cloudinit2.png)
+
+3. Enter a memorable Hostname so you can distinguish each droplet between each other
+
+
+
+4. Double check everything is correct and then click **Create Droplet** on the bottom of the screen.
