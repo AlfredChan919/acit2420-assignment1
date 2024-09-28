@@ -124,10 +124,10 @@ Get-Content C:\Users\your-user-name\.ssh\do-key.pub | Set-Clipboard
 Now we will create our cloud-init file. The file, which a YAML file, helps us automatically configure and set up our Droplets. After creating our cloud-init file, we will be able to upload the same starting setup to every single Droplet, allowing a consistent environment and reduced setup time.
 
 For our cloud-init file, the file will:
-1. create a new regular user
-2. install some initial packages
-3. add our public key to the authorized_keys file in our new users home directory
-4. disable root access via SSH
+* create a new regular user
+* install some initial packages
+* add our public key to the authorized_keys file in our new users home directory
+* disable root access via SSH
 
 
 1. Open Notepad 
