@@ -153,19 +153,24 @@ disable_root: true
 
 ## Creating your Droplet on DigitalOcean
 
-1. On DigitalOcean, click **Create** and select **Droplets**
+1. On DigitalOcean, click **Create** and select **Droplets** from the top-right-hand corner
+
 ![Creating Droplet Instructions](./assets/droplet1.png)
 
 2. Select the region closest to your current location to ensure low response times
+
 ![Creating Droplet Instructions](./assets/droplet2.png)
 
-3. Select **Custom images** and select our custom Arch Linux image
+3. Select **Custom images** and select the custom Arch Linux image we uploaded in [Upload custom image onto DigitalOcean](#upload-custom-image-to-digitalocean)
+
 ![Creating Droplet Instructions](./assets/droplet3.png)
 
 4. Select **Basic** plan, then select **Premium AMD** and then for our use-case we will select **$7/mo** option.  
+
 ![Creating Droplet Instructions](./assets/droplet4.png)
 
 5. Select **SSH Key** as Authentication method and ensure your SSH key is checked off.
+
 ![Creating Droplet Instructions](./assets/droplet5.png)
 
 ## Implementing the cloud-init Configuration File
