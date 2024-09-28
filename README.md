@@ -13,7 +13,7 @@ This guide is desgined with the base knowledge of a CIT student entering term 2 
 5. [Creating the cloud-init Configuration File](#creating-the-cloud-init-configuration-file)
 6. [Creating up your DigitalOcean Droplet with Arch Linux](#creating-your-droplet-on-digitalocean)
 7. [Implementing the cloud-init Configuration File to Automate Initial Setup Tasks](#implementing-the-cloud-init-configuration-file)
-8. Lastly, this guide will show you how to connect to your remote server using the SSH keys.
+8. [Lastly, this guide will show you how to connect to your remote server using the SSH keys.](#how-to-connect-to-your-server-through-ssh)
 
 ## Download Custom Arch Linux Image
 Before beginning, first you need to download a custom Arch Linux image from: 
@@ -61,7 +61,9 @@ Note: You want to select the server closest to your location to reduce latency a
 ![Digital Ocean Instruction](assets/digitalocean7.png)
 
 ## Creating the SSH Key Pair
-In order for you to securely connect your current machine to the remote server, you must first create an SSH key pair from your current machine and upload the public key onto DigitalOcean for it to connect. Generating the keys will give you two text files: a public key and private key. The private key is always kept for yourself and 
+In order for you to securely connect your current machine to the remote server, you must first create an SSH key pair from your current machine and upload the public key onto DigitalOcean for it to connect. Generating the keys will give you two text files: a public key and private key. The private key is always kept for yourself.
+
+The reason we are using SSH to connect to our Droplets is because SSH provides a secure method of communication between you and the remote server. SSH helps to encrypt your command-line arguments and helps keep it secure over an unsecured network.
 
 If you are running Windows and have never made an SSH key before, you may need to create a .ssh folder in your home directory. You can perform this by opening Windows PowerShell/terminal and typing the command:
 
@@ -204,4 +206,50 @@ Using DigitalOcean, they provide a free initialization scripts. This allows us t
 
 Congratulations! you now have a remote system running!
 
+## How to Connect to your Server through SSH
+Now that you have everything up and running, we can access the remote server through SSH commands. We can access it through the IP that is given on DigitalOcean's website, or we can create a config file within the .ssh folder where we can create a command to streamline the connection process for the future.
 
+1. On DigitalOcean, copy the IP address from your Droplet
+
+![Copy IP Address](./assets/ssh1.png)
+
+2. Open your .ssh folder on your laptop/PC
+
+3. create a new file called config
+
+4. Open config using notepad/a text editor and paste the following command in:
+```
+Host arch
+  HostName do-ip-address
+  User your-user-name
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/your-key-name
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+```
+**Note**: You must change do-ip-address to the IP address that you copied earlier. You must also change your-user-name to the username you provided on your cloud-init configuration file. You must also change your-key-name to the name of the SSH key you provided to DigitalOcean, but without the ".pub" file ending.
+
+Upon completing this, you should be able to access your remote server using the following command:
+
+```
+ssh arch
+```
+
+**Note**: If you do not wish to create a config file to access your remote server, you can also access the server by inputting the command:
+```
+ssh -i .ssh/do-key your-user-name@your-droplets-ip-address
+```
+* *-i - the identity_file,the path to the private key file*
+* *do-key - the key located on your DigitalOcean*
+
+Congratulations! You now have access to your remote server and can access it whenever you want!
+
+
+## References
+1. https://www.ssh.com/academy/ssh/keygen
+2. https://man7.org/linux/man-pages/man1/ls.1.html
+3. https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-two.md
+4. https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-three.md
+5. https://docs.digitalocean.com/products/droplets/how-to/create/
+6. https://docs.digitalocean.com/products/droplets/how-to/automate-setup-with-cloud-init/
+7. https://www.ssh.com/academy/ssh/command#:~:text=The%20ssh%20command%20provides%20a,SSH%20from%20a%20remote%20location.
