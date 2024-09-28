@@ -26,32 +26,39 @@ Make sure to select the latest image post. Also, make sure the download contains
 By uploading our own custom image, we can use it to create our Droplets with Arch Linux. This allows us to create a consistent environment by utilizing the custom image alongside our own cloud-init settings. 
 
 1. Click **Manage** on the left-hand side menu
-<img src="assets/digitalocean1.png" alt = "Digital Ocean Instruction">
+
+![Digital Ocean Instruction](assets/digitalocean1.png)
 <br></br>
 
 2. Select **Backups & Snapshots** from the left menu
-<img src="assets/digitalocean2.png" alt = "Digital Ocean Instruction">
+
+![Digital Ocean Instruction](assets/digitalocean2.png)
 <br></br>
 
 3. Select **Custom Images**
-<img src="assets/digitalocean3.png" alt = "Digital Ocean Instruction">
+
+![Digital Ocean Instruction](assets/digitalocean3.png)
 <br></br>
 
 4. Select **Upload Image**
-<img src="assets/digitalocean4.png" alt = "Digital Ocean Instruction">
+
+![Digital Ocean Instruction](assets/digitalocean4.png)
 <br></br>
 
 5. Find the Arch Linux image that you downloaded and open it
-<img src="assets/digitalocean5.png" alt = "Digital Ocean Instruction">
+
+![Digital Ocean Instruction](assets/digitalocean5.png)
 <br></br>
 
 6. Click on **Distribution** and from the drop-down list, select **Arch Linux**
-<img src='assets/digitalocean6.png' alt='Digital Ocean Instruction'>
+
+![Digital Ocean Instruction](assets/digitalocean6.png)
 <br></br>
 
 7. Select a datacenter and click **Upload Image**
 Note: You want to select the server closest to your location to reduce latency and improve response times.
-<img src='assets/digitalocean7.png' alt='Digital Ocean Instruction'>
+
+![Digital Ocean Instruction](assets/digitalocean7.png)
 
 ## Creating the SSH Key Pair
 In order for you to securely connect your current machine to the remote server, you must first create an SSH key pair from your current machine and upload the public key onto DigitalOcean for it to connect. Generating the keys will give you two text files: a public key and private key. The private key is always kept for yourself and 
@@ -99,11 +106,13 @@ Get-Content C:\Users\your-user-name\.ssh\do-key.pub | Set-Clipboard
 <br></br>
 
 3. Select the **Security** tab and then click **Add SSH Key**
-<img src="assets/connectkey2.png" alt = "SSH key instructions">
+
+![SSH key instructions](assets/connectkey2.png)
 <br></br>
 
 4. Paste the contents from the clipbnoard into the **Public Key** section and type a name for your public key
-<img src="assets/connectkey3.png" alt = "SSH key instructions">
+
+![SSH key instructions](assets/connectkey3.png)
 <br></br>
 
 5. Click **Add SSH Key** when completed
@@ -192,3 +201,7 @@ Using DigitalOcean, they provide a free initialization scripts. This allows us t
 4. Double check everything is correct and then click **Create Droplet** on the bottom of the screen.
 
 ![Creating Droplet Instructions](./assets/cloudinit4.png)
+
+Congratulations! you now have a remote system running!
+
+
