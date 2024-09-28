@@ -178,7 +178,7 @@ Using DigitalOcean, they provide a free initialization scripts. This allows us t
 ![Creating Droplet Instructions](./assets/cloudinit2.png)
 
 3. Enter a memorable Hostname so you can distinguish each droplet between each other
-
-
+![Creating Droplet Instructions](./assets/cloudinit3.png)
 
 4. Double check everything is correct and then click **Create Droplet** on the bottom of the screen.
+![Creating Droplet Instructions](./assets/cloudinit4.png)
