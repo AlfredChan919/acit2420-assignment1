@@ -104,6 +104,7 @@ Get-Content C:\Users\your-user-name\.ssh\do-key.pub | Set-Clipboard
 **Note**: Make sure to change "your-user-name" to the correct name in the terminal. Also make sure the name of the key ends in ".pub"
 
 2. On DigitalOcean, click **Settings**
+
 ![SSH key instructions](assets/connectkey1.png)
 <br></br>
 
