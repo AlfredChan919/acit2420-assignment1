@@ -69,6 +69,7 @@ Double check that the directory was created or exists by typing the command:
 ls
 ```
 *ls - list directory contents*
+
 ![SSH key instructions](assets/sshkey1.png)
 <br></br>
 
@@ -177,13 +178,17 @@ disable_root: true
 Using DigitalOcean, they provide a free initialization scripts. This allows us to directly paste our code into that section and have DigitalOcean run the cloud-init YAML code for us.
 
 1. Under the SSH key from Step 5 of [Creating your Droplet on DigitalOcean](#creating-your-droplet-on-digitalocean), Select **Advanced Options** and Check the box for **Add Initialization Scripts (free)**
+
 ![Creating Droplet Instructions](./assets/cloudinit1.png)
 
 2. From your cloud-init file earlier, copy and paste the contents into the textbox on DigitalOcean
+
 ![Creating Droplet Instructions](./assets/cloudinit2.png)
 
 3. Enter a memorable Hostname so you can distinguish each droplet between each other
+
 ![Creating Droplet Instructions](./assets/cloudinit3.png)
 
 4. Double check everything is correct and then click **Create Droplet** on the bottom of the screen.
+
 ![Creating Droplet Instructions](./assets/cloudinit4.png)
