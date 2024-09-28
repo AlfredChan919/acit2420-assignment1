@@ -162,7 +162,7 @@ disable_root: true
 * *packages - all packages inside will be downloaded upon initialization*
 * *disable_root: true - this prevents users from accessing the remote server as a root user through SSH*
 
-3. Save the file as a ".txt" and keep it in a location you can access it easily
+3. Save the file as a ".txt" and keep it in a location where you can access it easily
 
 ## Creating your Droplet on DigitalOcean
 
@@ -208,7 +208,7 @@ Using DigitalOcean, they provide a free initialization scripts. This allows us t
 Congratulations! you now have a remote system running!
 
 ## How to Connect to your Server through SSH
-Now that you have everything up and running, we can access the remote server through SSH commands. We can access it through the IP that is given on DigitalOcean's website, or we can create a config file within the .ssh folder where we can create a command to streamline the connection process for the future.
+Now that you have everything up and running, we can access the remote server through SSH commands. We can access it through the IP that is given on DigitalOcean's website by calling a long command in terminal or we can create a config file within the .ssh folder where we can create a simpler command to call in the terminal to streamline the connection process for the future.
 
 1. On DigitalOcean, copy the IP address from your Droplet
 
